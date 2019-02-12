@@ -1,0 +1,22 @@
+// descuento Black Friday.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main(){
+
+float P;
+cout<<"ingrese el precio: ";
+cin>>P;
+cout<<"el precio sin descuento es: ";
+cout<<P;
+cout<<endl;
+cout<<"el precio con descuento es: ";
+cout<<P*0.5;
+cout<<endl;
+getch();
+}
