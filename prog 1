@@ -1,0 +1,17 @@
+// proy 1.cpp : Defines the entry point for the console application.
+//
+//librerias
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+//libreria principal
+void main(){
+int P, x;
+cout<<"ingrese el precio:  ";
+cin>>P;
+cout<<"precio:  "<<P<<endl;
+cout<<"IVA:  "<<P*0.13<<endl;
+getch();
+}
+                   
