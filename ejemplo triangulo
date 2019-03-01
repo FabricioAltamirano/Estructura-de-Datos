@@ -1,0 +1,65 @@
+ejemtriangulo .h
+
+#pragma once
+class ejemtriangulo
+{
+private:
+	float base; //atributos
+	float altura;
+public: //metodos
+	ejemtriangulo(float _base, float _altura); //constructor
+	~ejemtriangulo(void);  //destructor
+	float area(float base, float altura);
+	float area();
+};
+
+ejemtriangulo.cpp
+
+#include "StdAfx.h"
+#include "ejemtriangulo.h"
+
+
+ejemtriangulo::ejemtriangulo(float _base, float _altura)
+{
+	base=_base;
+	altura=_altura;
+}
+
+
+float  ejemtriangulo::area(float base, float altura)
+	{
+		float aux;
+		aux=(base*altura)/2;
+		return aux;
+}
+float ejemtriangulo::area(){
+	float aux;
+	aux=(base*altura)/2;
+	return aux;
+}
+ejemtriangulo::~ejemtriangulo(void)
+{
+}
+
+Triangulo(main)
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "ejemtriangulo.h"
+
+
+using namespace std;
+
+void main()
+{
+	triangulo t1;
+	cout<<"el area del triangulo es: "<<t1.area()<<endl;
+	cout<<" el area del triangulo2 es "<<t1.area(12,7);
+	
+	getch();
+
+
+
+}
