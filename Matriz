@@ -1,0 +1,120 @@
+matriz.h
+
+#pragma once
+#define Max 10
+
+class Matriz
+{
+private:
+	int M[Max][Max];//filas columnas
+	int m,n;
+public:
+	Matriz(int _n, int _m);
+	~Matriz(void);
+	void cargar_matriz();
+	void mostrar_matriz();
+	void devolver_matriz(int _M[Max][Max]);
+	void sumar_matriz( int _M2[Max][Max], int _M3[Max][Max]);
+};
+
+
+matriz.cpp
+
+#include "StdAfx.h"
+#include "Matriz.h"
+#include <iostream>
+
+using namespace std;
+
+Matriz::Matriz(int _n, int _m)
+{
+}
+
+
+Matriz::~Matriz(void)
+{
+}
+
+void Matriz::cargar_matriz()
+{
+	for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<m;j++)
+		{
+			cout<<"ingrese M["<<i<<"]["<<j<<"]=";
+			cin>>M[i][j];
+		}
+	    cout<<endl;
+	}
+}
+
+void Matriz::mostrar_matriz()
+{
+	for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<m;j++)
+		{
+			cout<<"M["<<i<<"]["<<j<<"]=";
+			cout<<M[i][j];
+		}
+	    cout<<endl;
+	}
+}
+
+void Matriz::devolver_matriz(int _M[Max][Max])
+{
+    for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<m;j++)
+		{
+		  _M[i][j]=M[i][j];
+		}
+	}
+}
+
+void Matriz::sumar_matriz( int _M2[Max][Max], int _M3[Max][Max])
+{
+	for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<n;j++)
+		{
+			M[i][j]=_M2[i][j]+_M3[i][j];
+		}
+	}
+}
+
+ejemMat.cpp(main)
+
+#include "stdafx.h"
+#include "Matriz.h"
+#include <iostream>
+#include "conio.h"
+
+#define Max 100
+
+using namespace std;
+
+void main()
+{
+	int nrow, ncol, Mat[Max][Max], Mat1[Max][Max],Mat2[Max][Max];
+	do
+	{
+		cout<<"ingrese el numero de filas";
+		cin>>nrow;
+	}while(nrow<=0||nrow>Max);
+	do
+	{
+		cout<<"ingrese el numero de filas";
+		cin>>ncol;
+	}while(ncol<=0||ncol>Max);
+    Matriz M1(nrow, ncol);
+	M1.cargar_matriz();
+	M1.mostrar_matriz();
+	Matriz M2(nrow, ncol);
+	M2.cargar_matriz();
+	M2.mostrar_matriz();
+	Matriz M3(nrow, ncol);
+	M3.sumar_matriz();
+	getch();
+}
+
